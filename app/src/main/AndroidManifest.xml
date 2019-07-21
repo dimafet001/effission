@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:scheme="scb5af0fad-72ae-42b7-87e7-b23f10a64273"
-                    android:host="a4b3a443.ngrok.io"
+                    android:host="http://8fc972ff.ngrok.io"
                     android:path="/callback" />
             </intent-filter>
         </activity>
