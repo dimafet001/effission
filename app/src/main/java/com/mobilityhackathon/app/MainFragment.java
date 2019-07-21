@@ -74,32 +74,9 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        recyclerView = root.findViewById(R.id.my_recycler_view);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        // specify an adapter (see also next example)
-        String[] info = {"Your carbon footprint is approximately 870.000", "Your company reduced their weekly intake by 20%", "You are 30% better than the average company"};
-
-        mAdapter = new CustomRecyclerViewAdapter(info);
-        recyclerView.setAdapter(mAdapter);
         return root;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
     }
 
     @Override

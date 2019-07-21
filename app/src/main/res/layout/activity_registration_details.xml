@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:gravity="center"
-        android:text="A little bit more information"
+        android:text="We need just a little bit more information to provide you the most accurate data!"
         android:textSize="20sp" />
 
     <ScrollView
@@ -28,6 +30,52 @@
             android:paddingLeft="24dp"
             android:paddingTop="56dp"
             android:paddingRight="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_employer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="What company do you work for?"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/input_employer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_employer"
+                    android:inputType="text"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_workplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Where do you go to work?"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/input_workplace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_workplace"
+                    android:inputType="textPostalAddress"
+                    android:textSize="20dp" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -108,15 +156,6 @@
                 android:text="Connect"
                 android:textSize="20dp"
                 android:onClick="ConnectClick"/>
-
-            <TextView
-                android:id="@+id/link_signup"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:gravity="center"
-                android:text="No account yet? Create one"
-                android:textSize="16dip" />
 
         </LinearLayout>
     </ScrollView>
