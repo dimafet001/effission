@@ -39,7 +39,7 @@ public class MainScreen extends AppCompatActivity {
                     //return true;
                     break;
                 case R.id.navigation_notifications:
-                    Intent i3 = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent i3 = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(i3);
                     return true;
             }
