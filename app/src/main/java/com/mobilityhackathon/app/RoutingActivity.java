@@ -164,7 +164,10 @@ public class RoutingActivity extends FragmentActivity {
         RoutePlan routePlan = new RoutePlan();
 
         RouteOptions routeOptions = new RouteOptions();
-        routeOptions.setTransportMode(RouteOptions.TransportMode.CAR);
+        if (view.getId() == R.id.cardirectionsbutton)
+            routeOptions.setTransportMode(RouteOptions.TransportMode.CAR);
+        else if (view.getId() == R.id.walkdirectionsbutton)
+            routeOptions.setTransportMode(RouteOptions.TransportMode.PEDESTRIAN);
         routeOptions.setRouteType(RouteOptions.Type.FASTEST);
         routePlan.setRouteOptions(routeOptions);
 
