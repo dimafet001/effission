@@ -13,7 +13,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:gravity="center"
-        android:text="We appreciate your environmental awareness! We need just a few more details to "
+        android:text="We appreciate your environmental awareness! Create a profile to start using the app.  "
         android:textSize="20sp" />
 
     <ScrollView

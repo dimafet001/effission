@@ -173,10 +173,10 @@ public class RoutingActivity extends FragmentActivity {
 
         // 4. Select Waypoints for your routes
         // START: Nokia, Burnaby
-        routePlan.addWaypoint(new GeoCoordinate(49.1966286, -123.0053635));
+        routePlan.addWaypoint(new GeoCoordinate(37.318791, -121.976326));
 
         // END: Airport, YVR
-        routePlan.addWaypoint(new GeoCoordinate(49.1947289, -123.1762924));
+        routePlan.addWaypoint(new GeoCoordinate(37.319321, -122.044508));
 
         // 5. Retrieve Routing information via RouteManagerEventListener
         RouteManager.Error error = routeManager.calculateRoute(routePlan, routeManagerListener);

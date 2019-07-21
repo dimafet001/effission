@@ -22,18 +22,18 @@
         <activity
             android:name=".MainScreen"
             android:label="@string/title_activity_main_screen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".RegistrationDetails"
             android:label="@string/title_activity_registration_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <!-- HERE LAUNCH -->
         </activity>
         <activity android:name="com.smartcar.sdk.SmartcarCodeReceiver">
