@@ -74,6 +74,8 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        /*
+<<<<<<< HEAD
 
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -92,6 +94,9 @@ public class MainFragment extends Fragment {
 
         mAdapter = new CustomRecyclerViewAdapter(info);
         recyclerView.setAdapter(mAdapter);
+        return root; ===*/
+        View root = inflater.inflate(R.layout.fragment_main, container, false);
+
         return root;
     }
 
@@ -101,6 +106,9 @@ public class MainFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+
+
+
 
     @Override
     public void onAttach(Context context) {

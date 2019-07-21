@@ -67,23 +67,22 @@ public class CustomAdapter implements ListAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-        SubjectData subjectData=arrayList.get(position);
-        if(convertView==null) {
+        SubjectData subjectData = arrayList.get(position);
+        if (convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
-            convertView=layoutInflater.inflate(R.layout.list_row, null);
+            convertView = layoutInflater.inflate(R.layout.list_row, null);
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                 }
             });
-            TextView tittle=convertView.findViewById(R.id.title);
-            ImageView imag=convertView.findViewById(R.id.list_image);
+            TextView tittle = convertView.findViewById(R.id.title);
+            ImageView imag = convertView.findViewById(R.id.list_image);
             tittle.setText(subjectData.SubjectName);
             Picasso.with(context)
                     .load(subjectData.Image)
                     .into(imag);
-        }
-        else {
+        } else {
             //if
             Log.d("test", ":::inside getview");
         }

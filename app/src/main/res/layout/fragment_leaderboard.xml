@@ -6,10 +6,539 @@
     android:background="?android:attr/colorBackground"
     tools:context=".LeaderboardFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_leaderboard"
-        android:scrollbars="vertical"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content">
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabs"
+            android:orientation="vertical">
+
+            <!-- Item -->
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="1" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/aep" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="American Electric Power"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="2.5tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order2"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="2" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image2"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/duk" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Duke Energy"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="2.35tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order3"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="3" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image3"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/sou" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Southern Company"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="2.26tons/week" />
+
+            </LinearLayout>
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order4"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="4" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image4"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/gov" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="U.S. Government"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="1.47tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order5"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="5" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image5"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/ame" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Ameren Corp"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="1.3tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order6"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="6" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image6"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/lum" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Luminant"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="1.18tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order7"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="7" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image7"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/fir" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Luminant"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="1.01tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order8"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="8" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image8"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/aes" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="AES Corp"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text=".97tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order9"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="9" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image9"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/xce" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Xcel Energy"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text=".97tons/week" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+                <TextView
+                    android:id="@+id/order10"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="10" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="5dip"
+                    android:padding="3dip">
+
+                    <ImageView
+                        android:id="@+id/list_image10"
+                        android:layout_width="50dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/dom" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Dominion Resources"
+                    android:textColor="#040404"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text=".84tons/week" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
 </FrameLayout>

@@ -28,4 +28,14 @@
     <string name="title_activity_voting_page_new">VotingPageNew</string>
     <string name="toppings">From NGO, Vote For Max 2</string>
     <string name="button_text">Cast Your Votes</string>
+    <string name="title_activity_supsup">supsup</string>
+    <string name="title_activity_main">Hello HERE Maps!</string>
+    <string name="label_button_getdirections">Get Directions</string>
+    <string name="textview_routecoordinates_2waypoints">Press "Get Directions" button to calculate a route:\nStart: Nokia, Burnaby\nEnd: Airport, YVR</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

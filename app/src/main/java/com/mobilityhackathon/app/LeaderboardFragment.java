@@ -3,6 +3,7 @@ package com.mobilityhackathon.app;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -70,7 +71,9 @@ public class LeaderboardFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.fragment_leaderboard, container, false);
+                /*
 
+<<<<<<< HEAD
         RecyclerView recyclerView = root.findViewById(R.id.recycler_view_leaderboard);
 
         // use this setting to improve performance if you know that changes
@@ -85,6 +88,12 @@ public class LeaderboardFragment extends Fragment {
         Integer[] positions = {1,2,3,4};
         LeaderBoardAdapter adapter = new LeaderBoardAdapter(companyNames, points, positions);
         recyclerView.setAdapter(adapter);
+=======
+*/
+        TabLayout tl = root.findViewById(R.id.tabs);
+        tl.addTab(tl.newTab().setText("Energy"));
+        tl.addTab(tl.newTab().setText("S&P500"));
+        tl.addTab(tl.newTab().setText("Oil&Gas"));
 
         return root;
     }

@@ -2,37 +2,42 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobilityhackathon.app">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".VotingPageNew"
-            android:label="@string/title_activity_voting_page_new"></activity>
-        <activity
-            android:name=".Leaderboard"
-            android:label="@string/title_activity_leaderboard" />
+            android:label="@string/title_activity_voting_page_new" />
+
         <activity
             android:name=".MainScreen"
             android:label="@string/title_activity_main_screen" />
         <activity
-            android:name=".VotingPage"
-            android:label="@string/title_activity_voting_page" />
+            android:name=".RoutingActivity"
+            android:label="@string/title_activity_main_screen" />
+
         <activity
             android:name=".RegistrationDetails"
             android:label="@string/title_activity_registration_details"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- HERE LAUNCH -->
         </activity>
         <activity android:name="com.smartcar.sdk.SmartcarCodeReceiver">
             <intent-filter>
@@ -49,7 +54,14 @@
         </activity>
         <activity
             android:name=".DisplayInfoActivity"
-            android:label="Info"></activity>
+            android:label="Info" />
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="EP7al5Eq8XO0U2TVuAkW" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="hvRo8xNOxCk68AkKf90m6w" />
     </application>
 
 </manifest>

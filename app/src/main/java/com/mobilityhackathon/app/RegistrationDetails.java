@@ -38,6 +38,8 @@ public class RegistrationDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_details);
 
+
+
         CLIENT_ID = getString(R.string.client_id);
         REDIRECT_URI = "sc" + getString(R.string.client_id) + "://exchange";
         SCOPE = new String[]{"required:read_vehicle_info"};
@@ -46,7 +48,7 @@ public class RegistrationDetails extends AppCompatActivity {
                 CLIENT_ID,
                 REDIRECT_URI,
                 SCOPE,
-                false,
+                true,
                 new SmartcarCallback() {
                     @Override
                     public void handleResponse(final SmartcarResponse smartcarResponse) {
@@ -75,6 +77,7 @@ public class RegistrationDetails extends AppCompatActivity {
                                 }
 
 
+                                // TODO: Request Step 2: Get vehicle information
                                 // send request to retrieve the vehicle info
                                 Request infoRequest = new Request.Builder()
                                         .url(getString(R.string.app_server) + "/vehicle")
@@ -92,9 +95,12 @@ public class RegistrationDetails extends AppCompatActivity {
                                     String year = JObject.getString("year");
 
                                     Log.d("mylog", make + model + year);
-                            Intent intent = new Intent(getApplicationContext(), DisplayInfoActivity.class);
-                            intent.putExtra("INFO", make + " " + model + " " + year);
-                            startActivity(intent);
+                                    Intent intent = new Intent(getApplicationContext(), MainScreen.class);
+//                                    intent.putExtra("INFO", make + " " + model + " " + year);
+                                    intent.putExtra("make", make);
+                                    intent.putExtra("model", model);
+                                    intent.putExtra("year", year);
+                                    startActivity(intent);
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 } catch (JSONException e) {
@@ -102,7 +108,7 @@ public class RegistrationDetails extends AppCompatActivity {
                                 }
                             }
                         }).start();
-                        // TODO: Request Step 2: Get vehicle information
+
 
                     }
                 }
@@ -110,5 +116,10 @@ public class RegistrationDetails extends AppCompatActivity {
 
         Button connectButton = findViewById(R.id.btn_connect);
         smartcarAuth.addClickHandler(getApplicationContext(), connectButton);
+    }
+
+
+    public void ConnectClick(View view) {
+        finish();
     }
 }
