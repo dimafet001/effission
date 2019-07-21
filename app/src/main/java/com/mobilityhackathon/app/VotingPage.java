@@ -4,9 +4,16 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.mobilityhackathon.app.Adapters.CustomAdapter;
+import com.mobilityhackathon.app.data.SubjectData;
 
 import java.util.ArrayList;
 
@@ -20,6 +27,7 @@ public class VotingPage extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    Log.d("test", ":::nav_home");
                     mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
@@ -41,16 +49,34 @@ public class VotingPage extends AppCompatActivity {
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        final ListView list = findViewById(R.id.list);
-        ArrayList<SubjectData> arrayList = new ArrayList<SubjectData>();
-        arrayList.add(new SubjectData("JAVA", "https://www.tutorialspoint.com/java/",             "https://www.tutorialspoint.com/java/images/java-mini-logo.jpg"));
-        arrayList.add(new SubjectData("Python", "https://www.tutorialspoint.com/python/", "https://www.tutorialspoint.com/python/images/python-mini.jpg"));
-        arrayList.add(new SubjectData("Javascript", "https://www.tutorialspoint.com/javascript/", "https://www.tutorialspoint.com/javascript/images/javascript-mini-logo.jpg"));
-        arrayList.add(new SubjectData("Cprogramming", "https://www.tutorialspoint.com/cprogramming/", "https://www.tutorialspoint.com/cprogramming/images/c-mini-logo.jpg"));
-        arrayList.add(new SubjectData("Cplusplus", "https://www.tutorialspoint.com/cplusplus/", "https://www.tutorialspoint.com/cplusplus/images/cpp-mini-logo.jpg"));
-        arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", "https://www.tutorialspoint.com/android/images/android-mini-logo.jpg"));
+        ListView list = findViewById(R.id.list);
+        final ArrayList<SubjectData> arrayList = new ArrayList<SubjectData>();
+
+
+        arrayList.add(new SubjectData("JAVA", "https://www.tutorialspoint.com/java/","file:///android_asset/edisun.png"));
+        arrayList.add(new SubjectData("Python", "https://www.tutorialspoint.com/python/", "file:///android_asset/lastwall.png"));
+        arrayList.add(new SubjectData("Javascript", "https://www.tutorialspoint.com/javascript/", "file:///android_asset/lighthouse.png"));
+        arrayList.add(new SubjectData("Cprogramming", "https://www.tutorialspoint.com/cprogramming/", "file:///android_asset/shifted.png"));
+        arrayList.add(new SubjectData("Cplusplus", "https://www.tutorialspoint.com/cplusplus/", "file:///android_asset/solstice.png"));
+        arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", "file:///android_asset/via.png"));
+
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //Log.d("aha", "here");
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.d("testing", ":::inside OnItemClick");
+                Toast.makeText(getApplicationContext(), arrayList.get(i)+"", Toast.LENGTH_SHORT).show();
+            }
+
+        });
     }
+
 
 }

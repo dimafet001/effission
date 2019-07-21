@@ -11,14 +11,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //setContentView(R.layout.activity_voting_page);
-
     }
 
     public void Click(View view) {
         //Intent i = new Intent(this, RegistrationDetails.class);
         //startActivity(i);
-        Intent i = new Intent(this, VotingPage.class);
+        Intent i = new Intent(this, MainScreen.class);
         startActivity(i);
     }
 }
