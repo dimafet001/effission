@@ -71,7 +71,25 @@ public class LeaderboardFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.fragment_leaderboard, container, false);
+                /*
 
+<<<<<<< HEAD
+        RecyclerView recyclerView = root.findViewById(R.id.recycler_view_leaderboard);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        String[] companyNames = {"bob", "bob2", "bob3", "EcologicalSexualSuperFetishMultiDildo"};
+        Integer[] points = {10, 20, 30, 40};
+        Integer[] positions = {1,2,3,4};
+        LeaderBoardAdapter adapter = new LeaderBoardAdapter(companyNames, points, positions);
+        recyclerView.setAdapter(adapter);
+=======
+*/
         TabLayout tl = root.findViewById(R.id.tabs);
         tl.addTab(tl.newTab().setText("Energy"));
         tl.addTab(tl.newTab().setText("S&P500"));

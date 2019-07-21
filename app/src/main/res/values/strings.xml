@@ -25,6 +25,9 @@
     <string name="smartcar_auth_scheme">scb5af0fad-72ae-42b7-87e7-b23f10a64273</string>
     <string name="title_activity_main_screen">MainScreen</string>
     <string name="title_activity_leaderboard">Leaderboard</string>
+    <string name="title_activity_voting_page_new">VotingPageNew</string>
+    <string name="toppings">From NGO, Vote For Max 2</string>
+    <string name="button_text">Cast Your Votes</string>
     <string name="title_activity_supsup">supsup</string>
     <string name="title_activity_main">Hello HERE Maps!</string>
     <string name="label_button_getdirections">Get Directions</string>
