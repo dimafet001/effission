@@ -7,4 +7,8 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="margin_extra_small">10dp</dimen>
+    <dimen name="margin_small">20dp</dimen>
+    <dimen name="font_size_small">15sp</dimen>
+    <dimen name="font_size_medium">25sp</dimen>
 </resources>

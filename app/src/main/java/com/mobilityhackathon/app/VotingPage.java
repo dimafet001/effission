@@ -1,5 +1,6 @@
 package com.mobilityhackathon.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -28,18 +29,26 @@ public class VotingPage extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     Log.d("test", ":::nav_home");
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
+                    Intent i = new Intent(getBaseContext(), MainScreen.class);
+                    startActivity(i);
+                    break;
+                //return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
+                    Log.d("test", ":::nav_dashboard");
+                    Intent i2 = new Intent(getApplicationContext(), VotingPage.class);
+                    startActivity(i2);
+                    //return true;
+                    break;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
+                    Intent i3 = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i3);
+                    break;
+                //return true;
             }
             return false;
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +62,12 @@ public class VotingPage extends AppCompatActivity {
         final ArrayList<SubjectData> arrayList = new ArrayList<SubjectData>();
 
 
-        arrayList.add(new SubjectData("JAVA", "https://www.tutorialspoint.com/java/","file:///android_asset/edisun.png"));
-        arrayList.add(new SubjectData("Python", "https://www.tutorialspoint.com/python/", "file:///android_asset/lastwall.png"));
-        arrayList.add(new SubjectData("Javascript", "https://www.tutorialspoint.com/javascript/", "file:///android_asset/lighthouse.png"));
-        arrayList.add(new SubjectData("Cprogramming", "https://www.tutorialspoint.com/cprogramming/", "file:///android_asset/shifted.png"));
-        arrayList.add(new SubjectData("Cplusplus", "https://www.tutorialspoint.com/cplusplus/", "file:///android_asset/solstice.png"));
-        arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", "file:///android_asset/via.png"));
+        arrayList.add(new SubjectData("JAVA", "https://www.tutorialspoint.com/java/","file:///android_asset/gmo/edisun.png"));
+        arrayList.add(new SubjectData("Python", "https://www.tutorialspoint.com/python/", "file:///android_asset/gmo/lastwall.png"));
+        arrayList.add(new SubjectData("Javascript", "https://www.tutorialspoint.com/javascript/", "file:///android_asset/gmo/lighthouse.png"));
+        arrayList.add(new SubjectData("Cprogramming", "https://www.tutorialspoint.com/cprogramming/", "file:///android_asset/gmo/shifted.png"));
+        arrayList.add(new SubjectData("Cplusplus", "https://www.tutorialspoint.com/cplusplus/", "file:///android_asset/gmo/solstice.png"));
+        arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", "file:///android_asset/gmo/via.png"));
 
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);

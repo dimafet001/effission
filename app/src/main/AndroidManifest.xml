@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Leaderboard"
+            android:label="@string/title_activity_leaderboard"></activity>
+        <activity
             android:name=".MainScreen"
-            android:label="@string/title_activity_main_screen"></activity>
+            android:label="@string/title_activity_main_screen" />
         <activity
             android:name=".VotingPage"
             android:label="@string/title_activity_voting_page" />
