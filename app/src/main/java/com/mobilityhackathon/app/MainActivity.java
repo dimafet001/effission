@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         //Intent i = new Intent(this, VotingPage.class);
         //startActivity(i);
         //Intent i = new Intent(this, Leaderboard.class);
-        Intent i = new Intent(this, RegistrationDetails.class);
+        //Intent i = new Intent(this, RegistrationDetails.class);
+        //startActivity(i);
+        Intent i = new Intent(this, VotingPageNew.class);
         startActivity(i);
-//        Intent i = new Intent(this, VotingPage.class);
-//        startActivity(i);
     }
 }
