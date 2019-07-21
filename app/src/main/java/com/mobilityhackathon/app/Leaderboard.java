@@ -35,13 +35,13 @@ public class Leaderboard extends AppCompatActivity {
                     //return true;
                     break;
                 case R.id.navigation_notifications:
-                    Intent i3 = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i3);
+//                    Intent i3 = new Intent(getApplicationContext(), MainActivity.class);
+//                    startActivity(i3);
                     break;
                 //return true;
-                case R.id.navigation_leaderboard:
-                    Intent i4 = new Intent(getApplicationContext(), Leaderboard.class);
-                    startActivity(i4);
+//                case R.id.navigation_leaderboard:
+//                    Intent i4 = new Intent(getApplicationContext(), Leaderboard.class);
+//                    startActivity(i4);
             }
             return false;
         }
