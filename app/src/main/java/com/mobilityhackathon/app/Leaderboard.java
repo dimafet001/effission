@@ -11,14 +11,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.mobilityhackathon.app.Adapters.CustomRecyclerViewAdapter;
+import com.mobilityhackathon.app.Adapters.LeaderBoardAdapter;
 
-public class MainScreen extends AppCompatActivity {
+public class Leaderboard extends AppCompatActivity {
     private TextView mTextMessage;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -31,7 +27,7 @@ public class MainScreen extends AppCompatActivity {
                     Intent i = new Intent(getBaseContext(), MainScreen.class);
                     startActivity(i);
                     break;
-                    //return true;
+                //return true;
                 case R.id.navigation_dashboard:
                     Log.d("test", ":::nav_dashboard");
                     Intent i2 = new Intent(getApplicationContext(), VotingPage.class);
@@ -39,10 +35,13 @@ public class MainScreen extends AppCompatActivity {
                     //return true;
                     break;
                 case R.id.navigation_notifications:
-                    Intent i3 = new Intent(getApplicationContext(), LoginActivity.class);
+                    Intent i3 = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(i3);
                     break;
-                    //return true;
+                //return true;
+                case R.id.navigation_leaderboard:
+                    Intent i4 = new Intent(getApplicationContext(), Leaderboard.class);
+                    startActivity(i4);
             }
             return false;
         }
@@ -51,24 +50,24 @@ public class MainScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen);
+        setContentView(R.layout.activity_leaderboard);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        recyclerView = findViewById(R.id.my_recycler_view);
+        //mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_leaderboard);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // specify an adapter (see also next example)
-        String[] info = {"Your carbon footprint is approximately 870.000", "Your company reduced their weekly intake by 20%", "You are 30% better than the average company"};
-
-        mAdapter = new CustomRecyclerViewAdapter(info);
-        recyclerView.setAdapter(mAdapter);
+        String[] companyNames = {"bob", "bob2", "bob3", "EcologicalSexualSuperFetishMultiDildo"};
+        Integer[] points = {10, 20, 30, 40};
+        Integer[] positions = {1,2,3,4};
+        LeaderBoardAdapter adapter = new LeaderBoardAdapter(companyNames, points, positions);
+        recyclerView.setAdapter(adapter);
     }
 
 }
