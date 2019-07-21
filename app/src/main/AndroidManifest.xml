@@ -16,14 +16,17 @@
             android:label="@string/title_activity_leaderboard"></activity>
         <activity
             android:name=".MainScreen"
-            android:label="@string/title_activity_main_screen" />
+            android:label="@string/title_activity_main_screen"></activity>
+
         <activity
             android:name=".VotingPage"
             android:label="@string/title_activity_voting_page" />
+
         <activity
             android:name=".RegistrationDetails"
             android:label="@string/title_activity_registration_details"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,19 +34,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name="com.smartcar.sdk.SmartcarCodeReceiver">
             <intent-filter>
+                <action android:name="com.smartcar.sdk.SmartcarCodeReceiver" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="a4b3a443.ngrok.io"
-                    android:path="/callback"
-                    android:scheme="scb5af0fad-72ae-42b7-87e7-b23f10a64273" />
+                    android:host="@string/smartcar_auth_host"
+                    android:scheme="@string/smartcar_auth_scheme" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".DisplayInfoActivity"
+            android:label="Info">
+        </activity>
+
+
     </application>
 
 </manifest>

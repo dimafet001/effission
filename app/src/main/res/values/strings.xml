@@ -19,10 +19,14 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="client_id">b5af0fad-72ae-42b7-87e7-b23f10a64273</string>
+    <string name="app_server">https://b53370b5.ngrok.io</string>
+    <string name="smartcar_auth_host">exchange</string>
+    <string name="smartcar_auth_scheme">scb5af0fad-72ae-42b7-87e7-b23f10a64273</string>
     <string name="title_activity_main_screen">MainScreen</string>
-    <string name="large_text">
-        "Material is the metaphor.\n\n"
+    <string name="title_activity_leaderboard">Leaderboard</string>
 
+    <<<<<<< HEAD
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
         "technologically advanced and open to imagination and magic.\n"
@@ -110,4 +114,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_leaderboard">Leaderboard</string>
+=======
+>>>>>>> ad1a68614098921e07c2690035ad01ecedf64e65
 </resources>
