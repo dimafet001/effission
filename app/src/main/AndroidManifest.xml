@@ -3,6 +3,7 @@
     package="com.mobilityhackathon.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,12 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".MainScreen"
+            android:label="@string/title_activity_main_screen"></activity>
+
+        <activity
             android:name=".VotingPage"
-            android:label="@string/title_activity_voting_page"></activity>
+            android:label="@string/title_activity_voting_page" />
+
         <activity
             android:name=".RegistrationDetails"
             android:label="@string/title_activity_registration_details"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,16 +36,20 @@
             <intent-filter>
                 <action android:name="com.smartcar.sdk.SmartcarCodeReceiver" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="@string/smartcar_auth_host"
                     android:scheme="@string/smartcar_auth_scheme" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".DisplayInfoActivity"
-            android:label="Info"></activity>
+            android:label="Info">
+        </activity>
 
 
     </application>

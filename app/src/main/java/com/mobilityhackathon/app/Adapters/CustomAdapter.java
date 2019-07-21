@@ -1,7 +1,8 @@
-package com.mobilityhackathon.app;
+package com.mobilityhackathon.app.Adapters;
 
 import android.content.Context;
 import android.database.DataSetObserver;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import com.mobilityhackathon.app.R;
+import com.mobilityhackathon.app.data.SubjectData;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -79,6 +82,10 @@ public class CustomAdapter implements ListAdapter {
             Picasso.with(context)
                     .load(subjectData.Image)
                     .into(imag);
+        }
+        else {
+            //if
+            Log.d("test", ":::inside getview");
         }
         return convertView;
     }

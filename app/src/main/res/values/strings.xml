@@ -23,4 +23,6 @@
     <string name="app_server">https://b53370b5.ngrok.io</string>
     <string name="smartcar_auth_host">exchange</string>
     <string name="smartcar_auth_scheme">scb5af0fad-72ae-42b7-87e7-b23f10a64273</string>
+    <string name="title_activity_main_screen">MainScreen</string>
+
 </resources>
