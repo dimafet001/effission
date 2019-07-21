@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Your carbon footprint is approximately 870.000" />
+            android:text="Your carbon footprint is approximately 140kg of CO2 in the past week." />
 
         <TextView
             android:id="@+id/textView2"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
             android:layout_marginTop="16dp"
-            android:text="Your company reduced their weekly intake by 20%" />
+            android:text="You are 20% better than the average company" />
 
         <TextView
             android:id="@+id/textView3"
@@ -32,7 +32,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textView2"
             android:layout_marginTop="16dp"
-            android:text="You are 30% better than the average company" />
+            android:text="You could reduce it by 10% more if you cycle to work once a week." />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView3"
+            android:layout_marginTop="16dp"
+            android:text="Your Audi A6 2019 is reducing your carbon footprint by 20% compared to the 2010 model." />
 
         <Button
             android:id="@+id/button"

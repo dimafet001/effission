@@ -54,7 +54,6 @@ public class RegistrationDetails extends AppCompatActivity {
                     public void handleResponse(final SmartcarResponse smartcarResponse) {
                         Log.i("mylog", smartcarResponse.getCode());
 
-                        // TODO: Request Step 1: Obtain an access token
                         final OkHttpClient client = new OkHttpClient();
 
                         // TODO: Request Step 1: Obtain and access token
