@@ -17,41 +17,107 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv"
+        android:fitsSystemWindows="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingTop="56dp"
+            android:paddingRight="24dp">
 
-            <EditText
-                android:id="@+id/edittextID"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:padding="8dp"
-                android:hint="Car Model"
-                android:textSize="20sp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
 
-            <EditText
+                <TextView
+                    android:id="@+id/tv_car_make"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Car Make"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/input_car_make"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_car_make"
+                    android:inputType="text"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/edittextID"
-                android:layout_margin="16dp"
-                android:padding="8dp"
-                android:hint="Make"
-                android:textSize="20sp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
 
-            <Button
+                <TextView
+                    android:id="@+id/tv_car_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Car Model"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/input_car_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_car_model"
+                    android:inputType="text"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:text="Sign Up/Login"
-                android:layout_alignParentBottom="true"
-                android:onClick="Click"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_car_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Car Year"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/input_car_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_car_year"
+                    android:inputType="number"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:text="Login"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="No account yet? Create one"
+                android:textSize="16dip" />
 
         </LinearLayout>
-
     </ScrollView>
 
 </RelativeLayout>
