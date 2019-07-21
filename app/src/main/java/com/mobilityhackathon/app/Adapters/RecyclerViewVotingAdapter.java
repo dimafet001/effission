@@ -69,7 +69,7 @@ public class RecyclerViewVotingAdapter extends RecyclerView.Adapter<RecyclerView
         //button
         if(i == vcis.length -1) {
             ViewHolderFooter vhf = (ViewHolderFooter) viewHolder;
-            vhf.buttonView.setText("Cast your Vote");
+            vhf.buttonView.setText("Submit votes");
             vhf.buttonView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -88,8 +88,8 @@ public class RecyclerViewVotingAdapter extends RecyclerView.Adapter<RecyclerView
                     .load(vcis[i].getPathToImage())
                     .into(mh.imageView);
         } else {
-            ViewHolderHeader mh = (ViewHolderHeader) viewHolder;
-            mh.textView.setText("From NGO, Vote For Max 2");
+//            ViewHolderHeader mh = (ViewHolderHeader) viewHolder;
+//            mh.textView.setText();
             isHeader = false;
         }
     }

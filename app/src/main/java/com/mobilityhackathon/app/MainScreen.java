@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mobilityhackathon.app.Adapters.CustomRecyclerViewAdapter;
 
@@ -61,5 +62,9 @@ public class MainScreen extends AppCompatActivity {
 
     public void checkMap(View v) {
         startActivity(new Intent(this, RoutingActivity.class));
+    }
+
+    public void voteClick(View v) {
+        Toast.makeText(this, "Your vote is counted", Toast.LENGTH_SHORT).show();
     }
 }

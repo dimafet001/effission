@@ -10,7 +10,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
 
         <RelativeLayout
             android:id="@+id/thumbnail"
@@ -23,9 +24,7 @@
             <ImageView
                 android:id="@+id/image_company"
                 android:layout_width="50dip"
-                android:layout_height="50dip"
-                android:src="@drawable/img"
-                app:srcCompat="@drawable/img"  />
+                android:layout_height="50dip"  />
         </RelativeLayout>
 
         <TextView

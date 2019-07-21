@@ -16,13 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity
-            android:name=".VotingPageNew"
-            android:label="@string/title_activity_voting_page_new" />
+
 
         <activity
             android:name=".MainScreen"
-            android:label="@string/title_activity_main_screen" />
+            android:label="@string/title_activity_main_screen" >
+
+        </activity>
         <activity
             android:name=".RoutingActivity"
             android:label="@string/title_activity_main_screen" />

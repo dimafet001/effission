@@ -1,9 +1,13 @@
 package com.mobilityhackathon.app;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mobilityhackathon.app.Adapters.CustomAdapter;
+import com.mobilityhackathon.app.Adapters.RecyclerViewVotingAdapter;
 import com.mobilityhackathon.app.data.SubjectData;
+import com.mobilityhackathon.app.data.VotingCompanyInfo;
 
 import java.util.ArrayList;
 
@@ -32,6 +38,8 @@ public class VotingFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private static int choices = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -75,37 +83,57 @@ public class VotingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_voting, container, false);
+        View root = inflater.inflate(R.layout.activity_voting_page_new, container, false);
 
         mTextMessage = root.findViewById(R.id.message);
 
-        ListView list = root.findViewById(R.id.list);
-        final ArrayList<SubjectData> arrayList = new ArrayList<SubjectData>();
+        RecyclerView recyclerView = root.findViewById(R.id.recycler_view_voting);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        String[] companyNames = {"placeholder for header", "Company1", "Company2", "Company3"};
+        VotingCompanyInfo[] vcis = new VotingCompanyInfo[8];
+        vcis[0] = new VotingCompanyInfo(0, "placeholder for header", false, "");
+        vcis[1] = new VotingCompanyInfo(1, "Lastwall", false, "file:///android_asset/gmo/lastwall.png");
+        vcis[2] = new VotingCompanyInfo(2, "Carbon Lighthouse", false, "file:///android_asset/gmo/lighthouse.png");
+        vcis[3] = new VotingCompanyInfo(3, "Shifted Energy", false, "file:///android_asset/gmo/shifted.png");
+        vcis[4] = new VotingCompanyInfo(4, "Solstice", false, "file:///android_asset/gmo/solstice.png");
+        vcis[5] = new VotingCompanyInfo(5, "VIA", false, "file:///android_asset/gmo/via.png");
+        vcis[6] = new VotingCompanyInfo(6, "Edisun Microbrids", false, "file:///android_asset/gmo/edisun.png");
+        vcis[7] = new VotingCompanyInfo(7, "", false, "");
+
+        RecyclerViewVotingAdapter adapter = new RecyclerViewVotingAdapter(vcis, new RecyclerViewVotingAdapter.OnItemClicklistener() {
 
 
-        arrayList.add(new SubjectData("JAVA", "https://www.tutorialspoint.com/java/", "file:///android_asset/gmo/edisun.png"));
-        arrayList.add(new SubjectData("Python", "https://www.tutorialspoint.com/python/", "file:///android_asset/gmo/lastwall.png"));
-        arrayList.add(new SubjectData("Javascript", "https://www.tutorialspoint.com/javascript/", "file:///android_asset/gmo/lighthouse.png"));
-        arrayList.add(new SubjectData("Cprogramming", "https://www.tutorialspoint.com/cprogramming/", "file:///android_asset/gmo/shifted.png"));
-        arrayList.add(new SubjectData("Cplusplus", "https://www.tutorialspoint.com/cplusplus/", "file:///android_asset/gmo/solstice.png"));
-        arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", "file:///android_asset/gmo/via.png"));
-
-        CustomAdapter customAdapter = new CustomAdapter(getContext(), arrayList);
-        list.setAdapter(customAdapter);
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //Log.d("aha", "here");
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.d("testing", ":::inside OnItemClick");
-                Toast.makeText(getContext(), arrayList.get(i) + "", Toast.LENGTH_SHORT).show();
-            }
+            public void onItemClick(View v, VotingCompanyInfo vci) {
+                Log.d("test", ":::" + choices);
+                if (choices == 2) {
+                    Toast.makeText(getContext(), String.format("Sorry but only two choices are allowed, click to unselect an item", vci.getName()), Toast.LENGTH_LONG).show();
+                }
+                Log.d("test2", ""+vci.isChosen());
+                if (!vci.isChosen()) {
+                    vci.setChosen(true);
+                    if(choices < 2 && choices >= 0) {
+                        v.setBackgroundColor(getResources().getColor(R.color.highlightChoice));
+                        choices++;
+                    }
+                } else {
+                    vci.setChosen(false);
+                    if(choices > 0 && choices <= 2) {
+                        choices--;
+                        v.setBackgroundColor(Color.GRAY);
+                    }
+                }
 
+            }
         });
+        recyclerView.setAdapter(adapter);
 
         return root;
     }

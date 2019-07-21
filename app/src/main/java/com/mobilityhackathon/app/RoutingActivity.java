@@ -94,7 +94,7 @@ public class RoutingActivity extends FragmentActivity {
         });
 
         textViewResult = findViewById(R.id.title);
-        textViewResult.setText(R.string.textview_routecoordinates_2waypoints);
+//        textViewResult.setText(R.string.textview_routecoordinates_2waypoints);
     }
 
     /**
@@ -151,7 +151,7 @@ public class RoutingActivity extends FragmentActivity {
     // Functionality for taps of the "Get Directions" button
     public void getDirections(View view) {
         // 1. clear previous results
-        textViewResult.setText("");
+//        textViewResult.setText("");
         if (map != null && mapRoute != null) {
             map.removeMapObject(mapRoute);
             mapRoute = null;
@@ -200,16 +200,16 @@ public class RoutingActivity extends FragmentActivity {
                 GeoBoundingBox gbb = result.get(0).getRoute().getBoundingBox();
                 map.zoomTo(gbb, Map.Animation.NONE, Map.MOVE_PRESERVE_ORIENTATION);
 
-                textViewResult.setText(String.format("Route calculated with %d maneuvers.",
-                        result.get(0).getRoute().getManeuvers().size()));
+//                textViewResult.setText(String.format("Route calculated with %d maneuvers.",
+//                        result.get(0).getRoute().getManeuvers().size()));
             } else {
-                textViewResult.setText(
-                        String.format("Route calculation failed: %s", errorCode.toString()));
+//                textViewResult.setText(
+//                        String.format("Route calculation failed: %s", errorCode.toString()));
             }
         }
 
         public void onProgress(int percentage) {
-            textViewResult.setText(String.format("... %d percent done ...", percentage));
+//            textViewResult.setText(String.format("... %d percent done ...", percentage));
         }
     };
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -15,28 +15,14 @@
         android:onClick="getDirections" />
 
     <android.widget.Button
-        android:id="@+id/bikedirectionsbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="See Bike Directions"
-        android:onClick="getDirections" />
-
-    <android.widget.Button
         android:id="@+id/walkdirectionsbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See Walking Directions"
-        android:onClick="getDirections" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="getDirections"
+        android:text="See Walking Directions" />
 
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Helllo"
-        tools:context=".RoutingActivity" />
 
     <fragment
         android:id="@+id/mapfragment"
@@ -44,5 +30,19 @@
         android:layout_height="fill_parent"
         class="com.here.android.mpa.mapping.SupportMapFragment" />
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_below="@+id/cardirectionsbutton"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/rounded"
+        android:padding="16dp"
+        android:text="If you work to work today, you will offset you carbon footprint by 8 percent."
+        tools:context=".RoutingActivity" />
+
+</RelativeLayout>
 
