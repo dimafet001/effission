@@ -27,15 +27,19 @@
 
         <activity android:name="com.smartcar.sdk.SmartcarCodeReceiver">
             <intent-filter>
+                <action android:name="com.smartcar.sdk.SmartcarCodeReceiver" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:scheme="scb5af0fad-72ae-42b7-87e7-b23f10a64273"
-                    android:host="http://8fc972ff.ngrok.io"
-                    android:path="/callback" />
+                    android:host="@string/smartcar_auth_host"
+                    android:scheme="@string/smartcar_auth_scheme" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DisplayInfoActivity"
+            android:label="Info"></activity>
+
 
     </application>
 

@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Click(View view) {
-        //Intent i = new Intent(this, RegistrationDetails.class);
-        //startActivity(i);
-        Intent i = new Intent(this, VotingPage.class);
+        Intent i = new Intent(this, RegistrationDetails.class);
         startActivity(i);
+//        Intent i = new Intent(this, VotingPage.class);
+//        startActivity(i);
     }
 }
