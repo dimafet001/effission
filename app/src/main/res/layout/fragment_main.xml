@@ -47,7 +47,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView3"
+            android:layout_below="@id/textView4"
             android:text="Check out how I could reduce my carbon emission"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
