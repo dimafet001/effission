@@ -84,7 +84,7 @@ public class RoutingActivity extends FragmentActivity {
                     map = mapFragment.getMap();
                     // Set the map center coordinate to the Vancouver region (no animation)
                     map.setCenter(new GeoCoordinate(49.196261, -123.004773, 0.0),
-                            Map.Animation.NONE);
+                            Map.Animation.LINEAR);
                     // Set the map zoom level to the average between min and max (no animation)
                     map.setZoomLevel((map.getMaxZoomLevel() + map.getMinZoomLevel()) / 2);
                 } else {
@@ -93,7 +93,7 @@ public class RoutingActivity extends FragmentActivity {
             }
         });
 
-        textViewResult = (TextView) findViewById(R.id.title);
+        textViewResult = findViewById(R.id.title);
         textViewResult.setText(R.string.textview_routecoordinates_2waypoints);
     }
 

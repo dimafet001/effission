@@ -8,11 +8,26 @@
 
     <!-- UI element declaration for "Get Directions" button -->
     <android.widget.Button
-        android:id="@+id/directionsbutton"
+        android:id="@+id/cardirectionsbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="getDir"
+        android:text="See Car Directions"
         android:onClick="getDirections" />
+
+    <android.widget.Button
+        android:id="@+id/bikedirectionsbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See Bike Directions"
+        android:onClick="getDirections" />
+
+    <android.widget.Button
+        android:id="@+id/walkdirectionsbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See Bus Directions"
+        android:onClick="getDirections" />
+
 
     <TextView
         android:id="@+id/title"
