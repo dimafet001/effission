@@ -41,7 +41,7 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/rounded"
         android:padding="16dp"
-        android:text="If you work to work today, you will offset you carbon footprint by 8 percent."
+        android:text="If you walk to work today, you will offset you carbon footprint by 8 percent."
         tools:context=".RoutingActivity" />
 
 </RelativeLayout>
